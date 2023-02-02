@@ -14,14 +14,15 @@ const financeContainer = document.querySelector(
 const marketShared = async () => {
   let marketShareData = await fetchMarketShare();
 
-  const createMarketShare = marketShareData.map((asset, index) => {
-    const classMarketShareVariation =
-      asset.regularMarketChange > 0
-        ? 'financebar-custom__marketshare-variation--positive'
-        : asset.regularMarketChange < 0
-        ? 'financebar-custom__marketshare-variation--negative'
-        : 'financebar-custom__marketshare-variation--neutral';
-    return `
+  const createMarketShare = marketShareData
+    .map((asset, index) => {
+      const classMarketShareVariation =
+        asset.regularMarketChange > 0
+          ? 'financebar-custom__marketshare-variation--positive'
+          : asset.regularMarketChange < 0
+          ? 'financebar-custom__marketshare-variation--negative'
+          : 'financebar-custom__marketshare-variation--neutral';
+      return `
           <div class="financebar-custom__marketshare" data-asset="${index}">
           <span class="financebar-custom__marketshare-assets"> ${
             asset.symbol
@@ -36,31 +37,26 @@ const marketShared = async () => {
           }${asset.regularMarketChange.toFixed(2)}%
           </span>
           </div>
-          <span class="financebar-custom__marketshare-bar">&nbsp;</span>`;
-  });
+          <span class="financebar-custom__marketshare-bar">&nbsp;</span>
+          `;
+    })
+    .join('');
 
   financeContainer.innerHTML = createMarketShare;
-
-  const marketsharedDiv = document.querySelector(`[data-asset="10"]`);
-  console.log(marketsharedDiv);
-
-  const intersectionObserver = new IntersectionObserver(
-    (entries) => {
-      console.log(entries);
-    },
-    {
-      threshold: 0,
-    }
-  );
-
-  intersectionObserver.observe(marketsharedDiv);
 };
 
-marketShared();
-
-// let transition = 0;
-
-// setInterval(() => {
-//   transition = transition - 10;
-//   financeContainer.style.transform = `translateX(${transition}px)`;
-// }, 75);
+marketShared().then(() => {
+  $(document).ready(function () {
+    $('.financebar-custom__container').slick({
+      infinite: true,
+      autoplaySpeed: 500,
+      slidesToShow: 1,
+      centerMode: true,
+      variableWidth: true,
+      autoplay: true,
+      dots: false,
+      draggable: false,
+      initialSlide: 10,
+    });
+  });
+});

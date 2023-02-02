@@ -27,13 +27,13 @@ body {
 .financebar-custom {
   border-top: 1px solid var(--white-1);
   background-color: var(--black-1);
+  overflow: hidden;
+  pointer-events: none;
 }
 
 .financebar-custom__container {
   display: flex;
   gap: 4px;
-
-  /* overflow: scroll; */
 }
 
 .financebar-custom__marketshare-bar {
