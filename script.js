@@ -55,18 +55,17 @@ marketShared().then(() => {
         cssEase: 'linear',
         variableWidth: true,
         draggable: false,
-
         centerPadding: '10px',
         arrows: true,
         pauseOnHover: false,
         pauseOnFocus: false,
       });
     })
-    .on('beforeChange', function (e, slick) {
-      var width = $(
+    .on('beforeChange', function () {
+      let width = $(
         '.financebar-custom__container .slick-current'
       ).outerWidth();
-      var speed = (width * 3000) / 200;
+      let speed = (width * 3000) / 200;
       $('.financebar-custom__container').slick('setOption', 'speed', speed);
     });
 });
