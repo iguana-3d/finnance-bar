@@ -1,9 +1,9 @@
 :root {
   --white-1: #ffffff;
   --black-1: #0c0c0c;
-  --gray-1: #333333;
   --red-1: #ff5252;
   --green-1: #1eb980;
+  --green-2: #42c920;
 }
 
 *,
@@ -26,9 +26,43 @@ body {
 
 .financebar-custom {
   border-top: 1px solid var(--white-1);
+  border-bottom: 1px solid var(--white-1);
   background-color: var(--black-1);
   overflow: hidden;
-  /* pointer-events: none; */
+  display: flex;
+}
+
+.finance-custom__dolar-container {
+  display: flex;
+}
+
+.finance-custom__dolar-content {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 8px;
+  width: max-content;
+}
+
+.financebar-custom__dolar-icon,
+.financebar-custom__dolar-currency,
+.financebar-custom__dolar-price {
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: normal;
+  flex: 1 0 auto;
+  color: var(--green-2);
+  font-weight: 500;
+}
+
+.financebar-custom__dolar-bar {
+  display: inline-block;
+  width: 1px;
+  background: var(--white-1);
+  height: inherit;
+  padding: 2px 0;
 }
 
 .financebar-custom__container {
@@ -37,9 +71,10 @@ body {
 }
 
 .financebar-custom__marketshare-bar {
+  display: inline-block;
   width: 1px;
-  height: auto;
-  background-color: var(--gray-1);
+  height: inherit;
+  background-color: var(--white-1);
 }
 
 .financebar-custom__marketshare {
@@ -47,7 +82,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 8px;
+  padding: 12px 8px;
 }
 
 .financebar-custom__marketshare-assets,
