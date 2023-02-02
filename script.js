@@ -56,7 +56,7 @@ marketShared().then(() => {
       autoplay: true,
       dots: false,
       draggable: false,
-      initialSlide: 10,
+      initialSlide: 12,
     });
   });
 });
