@@ -28,7 +28,7 @@ body {
   border-top: 1px solid var(--white-1);
   background-color: var(--black-1);
   overflow: hidden;
-  pointer-events: none;
+  /* pointer-events: none; */
 }
 
 .financebar-custom__container {

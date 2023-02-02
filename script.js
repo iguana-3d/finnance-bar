@@ -46,17 +46,27 @@ const marketShared = async () => {
 };
 
 marketShared().then(() => {
-  $(document).ready(function () {
-    $('.financebar-custom__container').slick({
-      infinite: true,
-      autoplaySpeed: 500,
-      slidesToShow: 1,
-      centerMode: true,
-      variableWidth: true,
-      autoplay: true,
-      dots: false,
-      draggable: false,
-      initialSlide: 12,
+  $(document)
+    .ready(function () {
+      $('.financebar-custom__container').slick({
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 0,
+        cssEase: 'linear',
+        variableWidth: true,
+        draggable: false,
+
+        centerPadding: '10px',
+        arrows: true,
+        pauseOnHover: false,
+        pauseOnFocus: false,
+      });
+    })
+    .on('beforeChange', function (e, slick) {
+      var width = $(
+        '.financebar-custom__container .slick-current'
+      ).outerWidth();
+      var speed = (width * 3000) / 200;
+      $('.financebar-custom__container').slick('setOption', 'speed', speed);
     });
-  });
 });
