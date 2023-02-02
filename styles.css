@@ -1,0 +1,83 @@
+:root {
+  --white-1: #ffffff;
+  --black-1: #0c0c0c;
+  --gray-1: #333333;
+  --red-1: #ff5252;
+  --green-1: #1eb980;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+.financebar-custom {
+  border-top: 1px solid var(--white-1);
+  background-color: var(--black-1);
+}
+
+.financebar-custom__container {
+  display: flex;
+  gap: 4px;
+
+  /* overflow: scroll; */
+}
+
+.financebar-custom__marketshare-bar {
+  width: 1px;
+  height: auto;
+  background-color: var(--gray-1);
+}
+
+.financebar-custom__marketshare {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px;
+}
+
+.financebar-custom__marketshare-assets,
+.financebar-custom__marketshare-price,
+.financebar-custom__marketshare-variation {
+  font-size: 11px;
+  line-height: 16px;
+  letter-spacing: normal;
+  flex: 1 0 auto;
+}
+
+.financebar-custom__marketshare-assets,
+.financebar-custom__marketshare-price {
+  color: var(--white-1);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.financebar-custom__marketshare-variation {
+  font-weight: 600;
+}
+
+.financebar-custom__marketshare-variation--positive {
+  color: var(--green-1);
+}
+
+.financebar-custom__marketshare-variation--negative {
+  color: var(--red-1);
+}
+
+.financebar-custom__marketshare-variation--neutral {
+  color: var(--white-1);
+}
