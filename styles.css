@@ -70,6 +70,9 @@ body {
 }
 
 .finance-custom__dolar-svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .financebar-custom__container {
@@ -80,7 +83,7 @@ body {
 .financebar-custom__marketshare-bar {
   display: inline-block;
   width: 1px;
-  height: inherit;
+  height: 54px !important; /* unfortunatelly the Slick slider doesn't accepting the prop height: inherit or auto */
   background-color: var(--white-1);
 }
 
