@@ -26,7 +26,6 @@ const financeDolarContainer = document.querySelector(
 const createDollarDiv = async () => {
   const dollarPrice = await fetchDollarCurrency();
 
-  console.log(dollarPrice);
   const dollarPriceData = `
     <div class="finance-custom__dolar-content">
       <span class="financebar-custom__dolar-icon">
@@ -121,4 +120,14 @@ marketShared().then(() => {
       let speed = (width * 3000) / 200;
       $('.financebar-custom__container').slick('setOption', 'speed', speed);
     });
+  //Código adicionado
+  $('.financebar-custom__container').on('mouseover', function () {
+    $(this).slick('slickPause');
+    console.log('slider pausado');
+  });
+
+  $('.financebar-custom__container').on('mouseleave', function () {
+    $(this).slick('slickPlay');
+    console.log('slider iniciado');
+  });
 });
