@@ -77,7 +77,7 @@ const marketShared = async () => {
           <div class="financebar-custom__marketshare" data-asset="${index}">
             <span class="financebar-custom__marketshare-assets"> ${
               asset.symbol
-            } </span>
+            } - </span>
             <span class="financebar-custom__marketshare-price"> ${asset.regularMarketPrice.toLocaleString(
               'pt-BR',
               { style: 'currency', currency: 'BRL' }
