@@ -62,63 +62,63 @@ const createDollarDiv = async () => {
   financeDolarContainer.innerHTML = dollarPriceData;
 };
 
-// const marketShared = async () => {
-//   const marketShareData = await fetchMarketShare();
+const marketShared = async () => {
+  const marketShareData = await fetchMarketShare();
 
-//   const createMarketShare = marketShareData
-//     .map((asset, index) => {
-//       const classMarketShareVariation =
-//         asset.regularMarketChange > 0
-//           ? 'financebar-custom__marketshare-variation--positive'
-//           : asset.regularMarketChange < 0
-//           ? 'financebar-custom__marketshare-variation--negative'
-//           : 'financebar-custom__marketshare-variation--neutral';
-//       return `
-//           <div class="financebar-custom__marketshare" data-asset="${index}">
-//           <span class="financebar-custom__marketshare-assets"> ${
-//             asset.symbol
-//           } </span>
-//           <span class="financebar-custom__marketshare-price"> ${asset.regularMarketPrice.toLocaleString(
-//             'pt-BR',
-//             { style: 'currency', currency: 'BRL' }
-//           )} </span>
-//           <span class="financebar-custom__marketshare-variation ${classMarketShareVariation}">
-//           ${
-//             asset.regularMarketChange.toFixed(2) > 0 ? '+' : ''
-//           }${asset.regularMarketChange.toFixed(2)}%
-//           </span>
-//           </div>
-//           <span class="financebar-custom__marketshare-bar">&nbsp;</span>
-//           `;
-//     })
-//     .join('');
+  const createMarketShare = marketShareData
+    .map((asset, index) => {
+      const classMarketShareVariation =
+        asset.regularMarketChange > 0
+          ? 'financebar-custom__marketshare-variation--positive'
+          : asset.regularMarketChange < 0
+          ? 'financebar-custom__marketshare-variation--negative'
+          : 'financebar-custom__marketshare-variation--neutral';
+      return `
+          <div class="financebar-custom__marketshare" data-asset="${index}">
+            <span class="financebar-custom__marketshare-assets"> ${
+              asset.symbol
+            } </span>
+            <span class="financebar-custom__marketshare-price"> ${asset.regularMarketPrice.toLocaleString(
+              'pt-BR',
+              { style: 'currency', currency: 'BRL' }
+            )} </span>
+            <span class="financebar-custom__marketshare-variation ${classMarketShareVariation}">
+            ${
+              asset.regularMarketChange.toFixed(2) > 0 ? '+' : ''
+            }${asset.regularMarketChange.toFixed(2)}%
+            </span>
+          </div>
+          <span class="financebar-custom__marketshare-bar">&nbsp;</span>
+          `;
+    })
+    .join('');
 
-//   financeContainer.innerHTML = createMarketShare;
-// };
+  financeContainer.innerHTML = createMarketShare;
+};
 
 createDollarDiv();
-// marketShared().then(() => {
-//   $(document)
-//     .ready(function () {
-//       $('.financebar-custom__container').slick({
-//         infinite: true,
-//         autoplay: true,
-//         autoplaySpeed: 0,
-//         cssEase: 'linear',
-//         dots: false,
-//         variableWidth: true,
-//         draggable: false,
-//         centerPadding: '10px',
-//         arrows: false,
-//         pauseOnHover: false,
-//         pauseOnFocus: false,
-//       });
-//     })
-//     .on('beforeChange', function () {
-//       let width = $(
-//         '.financebar-custom__container .slick-current'
-//       ).outerWidth();
-//       let speed = (width * 3000) / 200;
-//       $('.financebar-custom__container').slick('setOption', 'speed', speed);
-//     });
-// });
+marketShared().then(() => {
+  $(document)
+    .ready(function () {
+      $('.financebar-custom__container').slick({
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 0,
+        cssEase: 'linear',
+        dots: false,
+        variableWidth: true,
+        draggable: false,
+        centerPadding: '10px',
+        arrows: false,
+        pauseOnHover: false,
+        pauseOnFocus: false,
+      });
+    })
+    .on('beforeChange', function () {
+      let width = $(
+        '.financebar-custom__container .slick-current'
+      ).outerWidth();
+      let speed = (width * 3000) / 200;
+      $('.financebar-custom__container').slick('setOption', 'speed', speed);
+    });
+});
