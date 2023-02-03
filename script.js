@@ -51,8 +51,8 @@ const createDollarDiv = async () => {
         </defs>
       </svg>
       </span>
-      <span class="financebar-custom__dolar-currency">Dólar</span>
-      <span class="financebar-custom__dolar-price"> ${parseFloat(
+      <span class="financebar-custom__dolar-currency">Dólar &nbsp;-</span>
+      <span class="financebar-custom__dolar-price">${parseFloat(
         dollarPrice.ask
       ).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span>
     </div>
