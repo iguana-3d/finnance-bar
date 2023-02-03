@@ -30,7 +30,7 @@ const createDollarDiv = async () => {
   const dollarPriceData = `
     <div class="finance-custom__dolar-content">
       <span class="financebar-custom__dolar-icon">
-      <svg width="28" height="30" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg" class="finance-custom__dolar-svg">
+      <svg viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg" class="finance-custom__dolar-svg">
         <g filter="url(#filter0_d_187_3041)">
         <path d="M14 6.75V8.25" stroke="#42C920" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M14 15.75V17.25" stroke="#42C920" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>

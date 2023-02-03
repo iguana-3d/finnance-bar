@@ -73,6 +73,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  width: 28px;
+  height: 30px;
 }
 
 .financebar-custom__container {
@@ -83,7 +86,8 @@ body {
 .financebar-custom__marketshare-bar {
   display: inline-block;
   width: 1px;
-  height: 54px !important; /* unfortunatelly the Slick slider doesn't accepting the prop height: inherit or auto */
+  height: 54px !important;
+  /* unfortunatelly the Slick slider doesn't accepting the prop height: inherit or auto */
   background-color: var(--white-1);
 }
 
@@ -125,4 +129,26 @@ body {
 
 .financebar-custom__marketshare-variation--neutral {
   color: var(--white-1);
+}
+
+@media screen and (max-width: 600px) {
+  .finance-custom__dolar-content,
+  .financebar-custom__marketshare {
+    padding: 4px 8px;
+  }
+
+  .finance-custom__dolar-svg {
+    width: 22px;
+    height: 24px;
+  }
+
+  .financebar-custom__dolar-icon,
+  .financebar-custom__dolar-currency,
+  .financebar-custom__dolar-price {
+    font-size: 12px;
+  }
+
+  .financebar-custom__marketshare-bar {
+    height: 34px !important;
+  }
 }
